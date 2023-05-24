@@ -1,0 +1,312 @@
+.header {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.header img {
+  max-width: 100%;
+  height: auto;
+  
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #b45617;
+    color: white;
+  }
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+nav form {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+nav input[type="text"] {
+  padding: 5px;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+nav button[type="submit"] {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: white;
+  color: #ff7300;
+  cursor: pointer;
+}
+
+nav a[href="#"] {
+  margin-right: 0;
+}
+
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"],
+  textarea,
+  select {
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+
+  button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    text-decoration: underline;
+  }
+
+  
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+  }
+
+  .popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 7px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    text-align: center;
+  }
+
+  .popup-overlay.active {
+    visibility: visible;
+    opacity: 1;
+  }
+
+
+
+  button[type="submit"] {
+    background-color: rgb(9, 255, 0); /* color de fondo naranja */
+    color: white; /* color de texto blanco */
+    border-radius: 20px; /* para hacer que los bordes sean redondeados */
+    padding: 10px 20px; /* para agregar espacio alrededor del texto */
+    text-decoration: none; /* para eliminar el subrayado del enlace si lo usamos en un elemento 'a' */
+    display: inline-block; /* para hacer que el botón no sea cuadrado y se ajuste al ancho del contenido */
+  }
+  button[type="submit"]:hover {
+    background-color: #3e8e41;
+  }
+
+  button[type="botoneichon"]{  
+    background-color: rgb(233, 137, 81); /* color de fondo naranja */
+    color: white; /* color de texto blanco */
+    border-radius: 20px; /* para hacer que los bordes sean redondeados */
+    padding: 10px 20px; /* para agregar espacio alrededor del texto */
+    text-decoration: none; /* para eliminar el subrayado del enlace si lo usamos en un elemento 'a' */
+    display: inline-block; /* para hacer que el botón no sea cuadrado y se ajuste al ancho del contenido */
+  }
+
+  button[type= "botoneichon"]:hover {
+    background-color: #e7380c;
+  }
+
+  .form-group {
+    width: 100%;
+    padding: 0,5px;
+  }
+
+
+  .table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  th {
+    background-color: #f49c48;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  td {
+    background-color: #fff;
+    color: #333;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  tr:nth-child(even) td {
+    background-color: #f8f8f8;
+  }
+  
+  
+  footer {
+    align-items: center;
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+  
+  }
+  
+  .social-media img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+  
+  .social-media img:last-child {
+    margin-right: 0;
+
+    
+  }
+
+  .btn-eliminar {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+
+  button {
+    background-color: rgb(255, 136, 0);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #ff5e00;
+  }
+  
+  button.eliminar {
+    background-color: #f44336;
+  }
+  
+  button.editar {
+    background-color: #008CBA;
+  }
+  
+  button.eliminar:hover {
+    background-color: #cc0000;
+  }
+  
+  button.editar:hover {
+    background-color: #005A80;
+  }
+
+  h2 {
+    color: #333;
+    text-align: center;
+    color: orange; 
+    font-family: 
+    cursive; font-size: 25px;
+  }
+  
+
+  #formulario-editar {
+    margin: auto;
+    max-width: 500px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+  }
+  
+  #formulario-editar label {
+    display: inline-block;
+    width: 100px;
+    margin-bottom: 10px;
+  }
+  
+  #formulario-editar input[type="text"], 
+  #formulario-editar input[type="number"], 
+  #formulario-editar textarea, 
+  #formulario-editar select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+  
+  #formulario-editar input[type="submit"],
+  #formulario-editar button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+    margin-left: 10px;
+  }
+  
+  #formulario-editar button[type="button"] {
+    background-color: #ccc;
+    float: right;
+  }
+  
+  #formulario-editar input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  #formulario-editar button[type="button"]:hover {
+    background-color: #bbb;
+  }
+  
+  #formulario-editar::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  

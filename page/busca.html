@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Busqueda</title>
+	<link rel="stylesheet" type="text/css" href="../css/busqueda.css">
+	<link rel="shortcut icon" href="../img/favicom.png" />
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
+	<script src="../scripts/buscar.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+
+<body>
+
+	<nav>
+		<div class="nav-left">
+			<a href="../index.html">Inicio</a>
+		</div>
+		<div class="nav-right">
+			<a href="../page/login.html">Agregar Receta</a>
+		</div>
+	</nav>
+
+	<header>
+		<div class="header">
+			<img src="../img/¿QUE COCINAR.jpg" alt="Imagen de cabecera">
+
+
+			<h1>Busqueda de Recetas por Ingrediente</h1>
+	</header><br>
+
+
+
+	<input type="text" id="ingrediente" placeholder="Escribe un Ingrediente" onkeydown="if(event.keyCode === 13) document.getElementById('miBoton').click()">
+	<button id="miBoton" type="submit" onclick="buscarRecetas()">Buscar</button>
+
+	
+	
+
+	<div id="cards-container">
+
+	</div>
+
+
+
+
+	<footer>
+		<div class="social-media">
+		  <a href="https://github.com/jomallaru" target="_blank"><img src="../img/git.png" alt="Github"></a>
+		  <a href="https://www.linkedin.com/in/jonathan-manuel-llanos-ruiz-8767a0175" target="_blank"><img
+			  src="../img/in.png" alt="Linkedin"></a>
+		  <a href="https://www.instagram.com/tathan_llanos/" target="_blank"><img src="../img/ins.png" alt="Instagram"></a>
+		</div>
+		<p>&copy; 2023 TathanLlanos. Todos los derechos reservados.</p>
+	  </footer>
+</body>
+
+</html>
+
+</body>
+
+</html>

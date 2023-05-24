@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form>
+        <label for="usuario">Nombre de usuario:</label>
+        <input type="text" id="usuario" name="usuario"><br>
+
+        <label for="clave">Clave:</label>
+        <input type="password" id="clave" name="clave"><br>
+
+        <label for="correo">Correo electrónico:</label>
+        <input type="email" id="correo" name="correo"><br>
+
+        <input type="button" value="Guardar" onclick="guardarUsuario()">
+    </form>
+
+
+    <script>
+        function guardarUsuario() {
+            // Crear un objeto con los datos del nuevo usuario
+            let crearUsuario = {
+                'usuario': $("#usuario").val(),
+                'clave': $("#clave").val(),
+                'correo': $("#correo").val(),
+            };
+
+            // Enviar una solicitud POST al servidor para guardar el nuevo usuario
+            $.ajax({
+                url: "https://g1e315ff777a567-cocinar.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/registro/registro",
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify(crearUsuario), // Convertir el objeto a formato JSON antes de enviarlo al servidor
+
+                success: function (respuesta) {
+                    // Mostrar un mensaje de éxito con el nombre del nuevo usuario creado
+                    alert("Usuario " + crearUsuario.usuario + " fue creado correctamente");
+                },
+                error: function (xhr, respuesta) {
+                    // Mostrar un mensaje de error genérico si la solicitud falla
+                    alert("Error al crear el nuevo Usuario, Intente de nuevo.");
+                }
+            });
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,196 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #ff6600;
+  color: white;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+  font-weight: bold; /* Añadido para dar más énfasis */
+}
+
+nav form {
+  display: flex;
+  align-items: center;
+}
+
+nav input[type="text"] {
+  padding: 5px;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px; /* Añadido para aumentar el tamaño del texto */
+}
+
+nav button[type="submit"] {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: white;
+  color: #ff7300;
+  cursor: pointer;
+  font-weight: bold; /* Añadido para dar más énfasis */
+}
+
+
+.header {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.header img {
+  max-width: 100%;
+  height: auto;
+  
+}
+
+
+
+#search-button {
+  background-color: orange;
+  color: white;
+  margin-right: 10px;
+}
+
+
+.card {
+
+  background-color: #FBB13C;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  width: 90%;
+  margin: 0 auto;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
+header {
+  background-color: #ff6600;
+  color: #fff;
+  padding: 20px;
+}
+
+h1 {
+  margin: 0;
+}
+
+form {
+  margin-top: 20px;
+}
+
+label {
+  display: inline-block;
+  width: 100px;
+  text-align: right;
+  margin-right: 10px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  border-radius: 3px;
+  border: 1px solid #eee;
+}
+
+button[type="submit"] {
+  padding: 10px;
+  color: #fff;
+  background: #e45f06;
+  border: 0;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #eb0000;
+}
+
+
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+ 
+  display: inline-block;
+  width: 300px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.card h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+  color: #ff6600; /* Color naranja llamativo */
+  font-family: 'Montserrat', sans-serif; /* Fuente personalizada */
+}
+
+.card p {
+  margin-bottom: 15px;
+  font-family: 'Open Sans', sans-serif; /* Fuente personalizada */
+  color: #555; /* Color gris oscuro */
+}
+
+.card ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card li {
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif; /* Fuente personalizada */
+  color: #333; /* Color gris oscuro */
+}
+
+.card a {
+  text-decoration: none;
+  color: #ff6600; /* Color naranja llamativo */
+  font-family: 'Montserrat', sans-serif; /* Fuente personalizada */
+  font-weight: bold;
+  transition: all 0.3s ease-in-out; /* Agrega un efecto de transición suave */
+}
+
+.card a:hover {
+  color: #ff8c00; /* Color naranja más claro */
+}
+
+body {
+  background-image: url(../img/enjoy.png);
+}
+
+footer {
+  align-items: center;
+  text-align: center;
+  margin-top: 50px;
+  padding: 20px;
+
+}
+
+.social-media img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.social-media img:last-child {
+  margin-right: 0;
+}

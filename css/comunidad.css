@@ -1,0 +1,147 @@
+/* Estilos generales */
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	background-color: #333;
+	color: #fff;
+	padding: 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: flex;
+}
+
+nav li {
+	margin-right: 20px;
+}
+
+nav a {
+	color: #fff;
+	text-decoration: none;
+}
+
+section {
+	background-color: #fff;
+	margin: 20px;
+	padding: 20px;
+	box-shadow: 0 2px 4px rgba(0,0,0,.1);
+	flex: 1 1 30%;
+}
+
+h2 {
+	font-size: 24px;
+	margin-top: 0;
+}
+
+/* Estilos para botón de comentarios */
+#boton-comentarios {
+	background-color: #333;
+	color: #fff;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-bottom: 20px;
+}
+
+#boton-comentarios:hover {
+	background-color: #555;
+}
+
+/* Estilos para sección de comentarios */
+#comentarios {
+	margin-top: 20px;
+}
+
+#comentarios h3 {
+	font-size: 20px;
+	margin-top: 0;
+}
+
+#comentarios form {
+	margin-top: 20px;
+}
+
+#comentarios label {
+	display: block;
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+
+#comentarios input[type="text"],
+#comentarios textarea {
+	padding: 10px;
+	border: 1px solid #000000;
+	border-radius: 5px;
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+#comentarios input[type="submit"] {
+	background-color: #333;
+	color: #000000;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+#comentarios input[type="submit"]:hover {
+	background-color: #555;
+}
+
+nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 20px;
+	background-color: #b45617;
+	color: white;
+  }
+  
+  nav a {
+	color: white;
+	text-decoration: none;
+	margin-right: 20px;
+  }
+  
+  nav form {
+	display: flex;
+	align-items: center;
+	margin-right: 20px;
+  }
+  
+  nav input[type="text"] {
+	padding: 5px;
+	margin-right: 10px;
+	border-radius: 5px;
+	border: none;
+  }
+  
+  nav button[type="submit"] {
+	padding: 5px 10px;
+	border-radius: 5px;
+	border: none;
+	background-color: white;
+	color: #ff7300;
+	cursor: pointer;
+  }
+  
+  nav a[href="#"] {
+	margin-right: 0;
+  }
+  img {
+	width: 300px;
+	height: auto;
+  }
+  

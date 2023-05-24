@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Inicio de Sesión</title>
+	<link rel="shortcut icon" href="../img/favicom.png" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+
+
+
+	<script src="../scripts/login.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/login.css">
+
+</head>
+
+<body>
+	<nav>
+		<div class="nav-left">
+			<a href="../index.html">Inicio</a>
+		</div>
+		<div class="nav-right">
+			<a href="../page/busca.html">Buscar Receta</a>
+		</div>
+	</nav>
+	<div class="header">
+		<img src="../img/¿QUE COCINAR.jpg" alt="Imagen de cabecera">
+
+
+		<div class="container">
+			<h1>PonteCooking</h1></span>
+
+			<form id="login-form">
+			
+				<label for="username">Usuario:</label>
+				<input type="text" id="username"><br>
+			  
+				<label for="password">Clave:</label>
+				<input type="password" id="password" ><br>			  
+				
+				<button type="button" onclick="verificarAcceso()">Iniciar sesión</button>
+				<button type="button" onclick="togglePopup()">Registrarse</button>
+			</form>
+
+
+
+
+			<div class="popup-overlay" id="popup">
+				<form class="popup-content">
+					<h2>Registro de Usuario</h2>
+
+
+
+					<label for="usuario">Nombre de usuario:</label>
+					<input type="text" id="usuario" required ><br>
+
+					<label for="clave">Clave:</label>
+					<input type="password" id="clave" required ><br>
+
+					<label for="correo">Correo electrónico:</label>
+					<input type="email" id="correo" required ><br>
+
+					<button type="button"  onclick="guardarUsuario()">Crear</button>
+
+
+
+					<button type="button" onclick="togglePopup()">Cancelar</button>
+
+
+				</form>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			function togglePopup() {
+				var popup = document.getElementById("popup");
+				popup.classList.toggle("active");
+			}
+		</script>
+
+
+</body>
+
+</html>
