@@ -26,6 +26,33 @@
 
 	</header>
 
+	<form action="#" method="POST" enctype="multipart/form-data">
+		<label for="receta">Receta:</label>
+		<input type="text" id="receta" name="receta" required>
+	  
+		<label for="ingredientes">Ingredientes:</label>
+		<textarea id="ingredientes" name="ingredientes" required></textarea>
+	  
+		<label for="preparacion">Preparación:</label>
+		<textarea id="preparacion" name="preparacion" required></textarea>
+	  
+		<label for="dificultad">Dificultad:</label>
+		<select id="dificultad" name="dificultad" required>
+		  <option value="">Seleccione la dificultad</option>
+		  <option value="Fácil">Fácil</option>
+		  <option value="Intermedia">Intermedia</option>
+		  <option value="Difícil">Difícil</option>
+		</select>
+	  
+		<label for="imagen">Imagen:</label>
+		<input type="file" id="imagen" name="imagen" accept="image/*" required>
+	  
+		<input type="submit" value="Guardar" onclick="guardarBlog()">
+	  </form>
+	  
+
+
+
 	<section>
 		<h2>Pollo a la parrilla</h2>
 		<img src="../img/pollo.jpg" alt="pollo a la parrilla">

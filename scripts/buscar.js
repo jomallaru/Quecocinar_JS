@@ -32,9 +32,10 @@ function mostrarRecetas(recetas) {
       for (let i = 0; i < recetas.length; i++) {
         htmlparaagregar += '<div class="card">';
         htmlparaagregar += '<h2>' + recetas[i].nombre + '</h2>';
+        htmlparaagregar += '<li><strong>Ingredientes:</strong> ' + recetas[i].ingredientes + '</li>';
         htmlparaagregar += '<p>' + recetas[i].preparacion + '</p>';
         htmlparaagregar += '<ul>';
-        htmlparaagregar += '<li><strong>Ingredientes:</strong> ' + recetas[i].ingredientes + '</li>';
+       
         htmlparaagregar += '<li><strong>Tiempo:</strong> ' + recetas[i].tiempo + ' minutos</li>';
         htmlparaagregar += '<li><strong>Dificultad:</strong> ' + recetas[i].dificultad + '</li>';
         htmlparaagregar += '</ul>';
