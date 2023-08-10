@@ -12,7 +12,7 @@ function guardarBlog() {
       processData: false, // Indicar que no se procese el contenido de formData
       contentType: false, // Indicar que no se establezca el tipo de contenido automáticamente
       success: function (respuesta) {
-        alert("Comentario guardado correctamente");
+        alert("Su comentario guardado correctamente");
         $("#nombre").val("");
         $("#fecha").val("");
         $("#texto").val("");

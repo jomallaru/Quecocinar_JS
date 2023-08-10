@@ -12,188 +12,65 @@
 </head>
 
 <body>
-	<nav>
-		<div class="nav-left">
+	<nav class="navbar">
+		<div class="navbar-left">
 			<a href="../index.html">Inicio</a>
 		</div>
-		<div class="nav-right">
-			<a href="#">Ingresar</a>
+		<div class="navbar-center">
+			<h1>Blog de Recetas</h1>
+		</div>
+				
+		<div class="agregar-receta">
+			<div class="navbar-right">
+				<a href="#">Ingresar</a>
+			</div>
+			<button class="boton-comentarios" onclick="togglePopup()">Agregar Receta</button>
 		</div>
 	</nav>
-	<header>
-		<h1>Blog de Recetas</h1>
-		<nav>
-
-	</header>
-
-	<form action="#" method="POST" enctype="multipart/form-data">
-		<label for="receta">Receta:</label>
-		<input type="text" id="receta" name="receta" required>
-	  
-		<label for="ingredientes">Ingredientes:</label>
-		<textarea id="ingredientes" name="ingredientes" required></textarea>
-	  
-		<label for="preparacion">Preparación:</label>
-		<textarea id="preparacion" name="preparacion" required></textarea>
-	  
-		<label for="dificultad">Dificultad:</label>
-		<select id="dificultad" name="dificultad" required>
-		  <option value="">Seleccione la dificultad</option>
-		  <option value="Fácil">Fácil</option>
-		  <option value="Intermedia">Intermedia</option>
-		  <option value="Difícil">Difícil</option>
-		</select>
-	  
-		<label for="imagen">Imagen:</label>
-		<input type="file" id="imagen" name="imagen" accept="image/*" required>
-	  
-		<input type="submit" value="Guardar" onclick="guardarBlog()">
-	  </form>
-	  
 
 
 
-	<section>
-		<h2>Pollo a la parrilla</h2>
-		<img src="../img/pollo.jpg" alt="pollo a la parrilla">
-		<ul>
-			<li>Ingredientes:</li>
-			<li>4 pechugas de pollo</li>
-			<li>2 cucharadas de aceite de oliva</li>
-			<li>Sal y pimienta al gusto</li>
-			<li>Jugo de limón al gusto</li>
-			<li>Preparación:</li>
-			<li>1. Precalentar la parrilla a fuego medio-alto.</li>
-			<li>2. Sazonar las pechugas de pollo con aceite de oliva, sal, pimienta y jugo de limón.</li>
-			<li>3. Colocar las pechugas en la parrilla y cocinar durante 6-8 minutos por cada lado, o hasta que estén
-				doradas y cocidas por completo.</li>
-		</ul>
-		<button id="boton-comentarios">Ver comentarios</button>
-		<div id="comentarios" style="display:none">
-			<h3>Comentarios</h3>
-			<ul id="lista-comentarios">
-			</ul>
+	<div class="popup-overlay" id="popup">
+		<div class="popup-content">
 			<form>
-				<label for="nombre">Nombre:</label>
-				<input type="text" id="nombre" name="nombre">
-				<label for="comentario">Comentario:</label>
-				<textarea id="comentario" name="comentario"></textarea>
-				<input type="submit" value="Enviar">
+				<label for="receta">Receta:</label>
+				<input type="text" id="receta" name="receta" required>
+
+				<label for="ingredientes">Ingredientes:</label>
+				<textarea id="ingredientes" name="ingredientes" required></textarea>
+
+				<label for="preparacion">Preparación:</label>
+				<textarea id="preparacion" name="preparacion" required></textarea>
+
+				<label for="dificultad">Dificultad:</label>
+				<select id="dificultad" name="dificultad" required>
+					<option value="">Seleccione la dificultad</option>
+					<option value="Fácil">Fácil</option>
+					<option value="Intermedia">Intermedia</option>
+					<option value="Difícil">Difícil</option>
+				</select>
+
+				<label for="imagen">Imagen:</label>
+				<input type="file" id="imagen" name="imagen" accept="image/*" required>
+
+				<input type="submit" value="Guardar" onclick="guardarBlog()">
+				<button class="cancel-btn" onclick="togglePopup()">Cancelar</button>
 			</form>
 		</div>
-	</section>
-	<section>
-		<h2>Ensalada Pollo a la parrilla</h2>
-		<img src="../img/ensalda.jpg" alt="pollo a la parrilla">
-		<ul>
-			<li>Ingredientes:</li>
-			<li>2 pechugas de pollo</li>
-			<li>2 cucharadas de aceite de oliva</li>
-			<li>Sal y pimienta al gusto</li>
-			<li>1 lechuga</li>
-			<li>1/2 taza de tomates cherry</li>
-			<li>1/2 taza de maíz</li>
-			<li>1/4 taza de queso feta</li>
-			<li>Preparación:</li>
-			<li>1. Precalentar la parrilla a fuego medio-alto.</li>
-			<li>2. Sazonar las pechugas de pollo con aceite de oliva, sal y pimienta.</li>
-			<li>3. Colocar las pechugas en la parrilla y cocinar durante 6-8 minutos por cada lado, o hasta que estén
-				doradas y cocidas por completo.</li>
-			<li>4. Cortar el pollo en tiras.</li>
-			<li>5. Lavar y picar la lechuga.</li>
-			<li>6. Mezclar la lechuga, los tomates, el maíz y el queso feta en un tazón grande.</li>
-			<li>7. Agregar las tiras de pollo a la ensalada y mezclar bien.</li>
-		</ul>
-		
-		<button id="boton-comentarios">Ver comentarios</button>
-		<div id="comentarios" style="display:none">
-			<h3>Comentarios</h3>
-			<ul id="lista-comentarios">
-			</ul>
-			<form>
-				<label for="nombre">Nombre:</label>
-				<input type="text" id="nombre" name="nombre">
-				<label for="comentario">Comentario:</label>
-				<textarea id="comentario" name="comentario"></textarea>
-				<input type="submit" value="Enviar">
-			</form>
-		</div>
-	</section>
-	<section>
-		<h2>Salmon a la parrilla</h2>
-		<img src="../img/salmon.jfif" alt="pollo a la parrilla">
-		<ul>
-			<li>Ingredientes:</li>
-			<li>4 filetes de salmón</li>
-			<li>2 cucharadas de aceite de oliva</li>
-			<li>Sal y pimienta al gusto</li>
-			<li>Jugo de limón al gusto</li>
-			<li>Preparación:</li>
-			<li>1. Precalentar la parrilla a fuego medio-alto.</li>
-			<li>2. Sazonar los filetes de salmón con aceite de oliva, sal, pimienta y jugo de limón.</li>
-			<li>3. Colocar los filetes en la parrilla y cocinar durante 5-7 minutos por cada lado, o hasta que estén
-				cocidos por completo.</li>
-			<li>4. Servir caliente con una guarnición de ensalada o verduras asadas.</li>
-		</ul>
-		<button id="boton-comentarios">Ver comentarios</button>
-		<div id="comentarios" style="display:none">
-			<h3>Comentarios</h3>
-			<ul id="lista-comentarios">
-			</ul>
-			<form>
-				<label for="nombre">Nombre:</label>
-				<input type="text" id="nombre" name="nombre">
-				<label for="comentario">Comentario:</label>
-				<textarea id="comentario" name="comentario"></textarea>
-				<input type="submit" value="Enviar">
-			</form>
-		</div>
-
-	</section>
-	<section>
-		<h2>Hambuerguesa de carne a la parrilla</h2>
-		<img src="../img/hamburg.jfif" alt="pollo a la parrilla">
-		<ul>
-			<li>Ingredientes:</li>
-			<li>1 libra de carne molida</li>
-			<li>1/4 taza de cebolla picada</li>
-			<li>1 cucharada de mostaza</li>
-			<li>1 cucharada de salsa Worcestershire</li>
-			<li>1 huevo</li>
-			<li>Sal y pimienta al gusto</li>
-			<li>4 panes para hamburguesa</li>
-			<li>Lechuga, tomate y queso para la guarnición</li>
-			<li>Preparación:</li>
-			<li>1. En un tazón grande, mezclar la carne molida, lacebolla picada, la mostaza, la salsa Worcestershire,
-				el huevo, la sal y la pimienta hasta que estén bien combinados.</li>
-			<li>2. Dividir la mezcla de carne en cuatro partes iguales y formar cuatro hamburguesas del mismo tamaño.
-			</li>
-			<li>3. Precalentar la parrilla a fuego medio-alto.</li>
-			<li>4. Colocar las hamburguesas en la parrilla y cocinar durante 4-5 minutos por cada lado, o hasta que
-				estén cocidas por completo.</li>
-			<li>5. Mientras tanto, tostar los panes para hamburguesa en la parrilla.</li>
-			<li>6. Servir las hamburguesas en los panes tostados y agregar lechuga, tomate y queso al gusto.</li>
-		</ul>
-		<button id="boton-comentarios">Ver comentarios</button>
-		<div id="comentarios" style="display:none">
-			<h3>Comentarios</h3>
-			<ul id="lista-comentarios">
-			</ul>
-			<form>
-				<label for="nombre">Nombre:</label>
-				<input type="text" id="nombre" name="nombre">
-				<label for="comentario">Comentario:</label>
-				<textarea id="comentario" name="comentario"></textarea>
-				<input type="submit" value="Enviar">
-			</form>
-		</div>
-
-	</section>
-
-	<footer>
+	</div>
+	<footer class="footer">
 		<p>&copy; 2023 Blog de Recetas</p>
 	</footer>
 
-	</body>
+
+	</script>
+
+	<script type="text/javascript">
+		function togglePopup() {
+			var popup = document.getElementById("popup");
+			popup.classList.toggle("active");
+		}
+	</script>
+</body>
 
 </html>
