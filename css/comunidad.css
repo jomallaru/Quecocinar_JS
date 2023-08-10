@@ -25,18 +25,56 @@ nav {
     padding: 5px 20px;
 }
 .navbar-right {
-	text-align: right;
+    text-align: right;
     flex: 1;
 }
+
+/* Alineación al Centro en la Barra de Navegación */
 .navbar-center {
     text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: #ffffff;
 }
 
+
+/* Estilo para Agregar una Nueva Receta */
 .agregar-receta {
     text-align: right;
     margin-top: 20px;
 }
 
+.addRecipe {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #FFA500;
+    color: #FFFFFF;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.addRecipe:hover {
+    background-color: #78db06;
+}
+.botonone {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #FFA500;
+    color: #FFFFFF;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.botonone:hover {
+    background-color: #FF0000;
+}
 -----------------------------------------------------------
 /* Estilos para formularios */
 form {
