@@ -48,13 +48,17 @@
 				</select>
 
 				<label for="imagen">Imagen:</label>
-				<input type="file" id="imagen" name="imagen" accept="image/*" required>
+				<input type="file" id="imagen" name="imagen" accept="image/*">
 
-				<input type="submit" value="Guardar" onclick="guardarBlog()">
+				<input type="submit" value="Guardar" onclick="GuardarBlog()">
 				<button class="cancel-btn" onclick="togglePopup()">Cancelar</button>
 			</form>
 		</div>
 	</div>
+
+	<body onload="TraerComentarios ()">
+
+
 	<footer class="footer">
 		<p>&copy; 2023 TathanLlanos. Todos los derechos reservadoss</p>
 	</footer>
