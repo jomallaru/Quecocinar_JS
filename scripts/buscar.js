@@ -4,7 +4,7 @@ function buscarRecetas() {
     cardsContainer.innerHTML = ''; // Limpiar contenedor de cards
 
     // Hacer petición a la API para obtener las recetas
-    fetch('https://g1e315ff777a567-cocinar.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/recetas/recetas')
+    fetch('https://g1e315ff777a567-c')
         .then(response => response.json())
         .then(data => {
             // Filtrar las recetas que contengan el ingrediente ingresado
