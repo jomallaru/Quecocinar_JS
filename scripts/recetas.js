@@ -2,7 +2,7 @@
 
 function traerDatosRecetas() {
   $.ajax({
-    url: "https://g1e315ff777a567-cocinar.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/recetas/recetas",
+    url: "https://gb2ca086f6748de-s27aub565ndywxqi.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/recetas/recetas",
     type: "GET",
     dataType: "json",
     success: function (respuesta) {
@@ -25,7 +25,7 @@ function guardarReceta() {
   };
 
   $.ajax({
-    url: "https://g1e315ff777a567-cocinar.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/recetas/recetas",
+    url: "https://gb2ca086f6748de-s27aub565ndywxqi.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/recetas/recetas",
     type: "POST",
     data: crearReceta,
     dataType: "json",
@@ -51,7 +51,7 @@ function eliminarReceta(nombre) {
   if (confirm("¿Está seguro que desea eliminar la receta " + nombre + "?")) {
     // Enviar una petición DELETE a la API para eliminar la receta
     $.ajax({
-      url: "https://g1e315ff777a567-cocinar.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/recetas/recetas?nombre=" + nombre,
+      url: "https://gb2ca086f6748de-s27aub565ndywxqi.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/recetas/recetas" + nombre,
       type: "DELETE",
       dataType: "json",
       success: function (respuesta) {
@@ -114,7 +114,7 @@ function guardarCambios() {
   let nombre = $("#nombre").val();
 
   $.ajax({
-    url: "https://g1e315ff777a567-cocinar.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/recetas/recetas/" + nombre,
+    url: "https://gb2ca086f6748de-s27aub565ndywxqi.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/recetas/recetas" + nombre,
     type: "PUT",
     data: datosEditarReceta,
     dataType: "json",
