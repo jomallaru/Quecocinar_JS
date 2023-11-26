@@ -122,45 +122,47 @@ function editarReceta(nombre, ingredientes, preparacion, tiempo, dificultad) {
 }
 
 function guardarCambios() {
-  console.log("Entrando en guardarCambios");
+console.log("Entrando en guardarCambios");
 
-  let datosEditarReceta = {
-    'nombre': $("#nombre").val(),
-    'ingredientes': $("#ingredientes").val(),
-    'preparacion': $("#preparacion").val(),
-    'tiempo': $("#tiempo").val(),
-    'dificultad': $("#dificultad").val()
-  };
-
-  console.log("Datos a enviar:", datosEditarReceta);
-
-  let nombre = $("#nombre").val();
-
-  console.log("Nombre de la receta:", nombre);
-
-  $.ajax({
-    url: `https://gb2ca086f6748de-s27aub565ndywxqi.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/recetas/recetas/${nombre}`,
-    type: "PUT",
-    data: datosEditarReceta,
-    dataType: "json",
-
-    success: function (respuesta) {
-      console.log("Respuesta exitosa:", respuesta);
-      alert("Receta actualizada correctamente");
-      // Mostrar la tabla y el título
-      $("#tabla, #titulo").show();
-      // Eliminar el formulario de edición
-      $("#formulario-editar").remove();
-      // Recargar la lista de recetas
-      traerDatosRecetas();
-    },
-    error: function (xhr, status, error) {
-      console.error("Error al actualizar la receta:", xhr, status, error);
-      alert("Error al actualizar la receta");
-    }
-  });
+// Validar datos antes de enviar la petición
+let nombre = $("#nombre").val();
+if (!nombre) {
+  alert("El nombre de la receta es obligatorio");
+  return;
 }
 
+let datosEditarReceta = {
+  'nombre': nombre,
+  'ingredientes': $("#ingredientes").val(),
+  'preparacion': $("#preparacion").val(),
+  'tiempo': $("#tiempo").val(),
+  'dificultad': $("#dificultad").val()
+};
+
+console.log("Datos a enviar:", datosEditarReceta);
+
+$.ajax({
+  url: `https://gb2ca086f6748de-s27aub565ndywxqi.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/recetas/recetas/${nombre}`,
+  type: "PUT",
+  data: datosEditarReceta,
+  dataType: "json",
+
+  success: function (respuesta) {
+    console.log("Respuesta exitosa:", respuesta);
+    alert("Receta actualizada correctamente");
+    // Mostrar la tabla y el título
+    $("#tabla, #titulo").show();
+    // Eliminar el formulario de edición
+    $("#formulario-editar").remove();
+    // Recargar la lista de recetas
+    traerDatosRecetas();
+  },
+  error: function (xhr, status, error) {
+    console.error("Error al actualizar la receta:", xhr, status, error);
+    alert("Error al actualizar la receta. Por favor, inténtalo de nuevo más tarde.");
+  }
+});
+}
 
 function cancelarEdicion() {
   // Eliminar el formulario de edición y mostrar la tabla de recetas

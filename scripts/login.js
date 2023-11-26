@@ -5,7 +5,7 @@ function verificarAcceso() {
 
   // Enviar una solicitud GET al servidor para verificar los datos existentes
   $.ajax({
-    url: 'https://g1e315ff777a567-cocinar.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/registro/registro',
+    url: 'https://gb2ca086f6748de-s27aub565ndywxqi.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/registro/registro',
     type: 'GET',
     dataType: 'json',
     success: function (response) {
@@ -48,7 +48,7 @@ function guardarUsuario() {
 
   // Enviar una solicitud GET al servidor para verificar los datos existentes
   $.ajax({
-    url: 'https://g1e315ff777a567-cocinar.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/registro/registro',
+    url: 'https://gb2ca086f6748de-s27aub565ndywxqi.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/registro/registro',
     type: 'GET',
     dataType: 'json',
     success: function (response) {
@@ -66,7 +66,7 @@ function guardarUsuario() {
         
         // Enviar una solicitud POST al servidor para crear el nuevo usuario
         $.ajax({
-          url: 'https://g1e315ff777a567-cocinar.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/registro/registro',
+          url: 'https://gb2ca086f6748de-s27aub565ndywxqi.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/registro/registro',
           type: 'POST',
           data: JSON.stringify(nuevoUsuario),
           contentType: 'application/json',
