@@ -25,7 +25,7 @@ function guardarReceta() {
   };
 
   $.ajax({
-    url: "https://gb2ca086f6748de-s27aub565ndywxqi.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/recetas/recetas/",
+    url: "https://gb2ca086f6748de-s27aub565ndywxqi.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/recetas/recetas",
     type: "POST",
     data: crearReceta,
     dataType: "json",
