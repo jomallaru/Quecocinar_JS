@@ -16,12 +16,24 @@ function traerDatosRecetas() {
 
 //__________________________________________________________Funcion para Guardar__________________________________________
 function guardarReceta() {
+  // Validar datos antes de enviar la solicitud
+  let nombre = $("#nombre").val();
+  let ingredientes = $("#ingredientes").val();
+  let preparacion = $("#preparacion").val();
+  let tiempo = $("#tiempo").val();
+  let dificultad = $("#dificultad").val();
+
+  if (!nombre || !ingredientes || !preparacion || !tiempo || !dificultad) {
+    alert("Por favor, complete todos los campos.");
+    return;
+  }
+
   let crearReceta = {
-    'nombre': $("#nombre").val(),
-    'ingredientes': $("#ingredientes").val(),
-    'preparacion': $("#preparacion").val(),
-    'tiempo': $("#tiempo").val(),
-    'dificultad': $("#dificultad").val()
+    'nombre': nombre,
+    'ingredientes': ingredientes,
+    'preparacion': preparacion,
+    'tiempo': tiempo,
+    'dificultad': dificultad
   };
 
   $.ajax({
@@ -30,18 +42,19 @@ function guardarReceta() {
     data: crearReceta,
     dataType: "json",
     success: function (respuesta) {
+      console.log(respuesta); // Mostrar la respuesta en la consola para fines de depuración
       alert("Receta creada correctamente");
-      $("#nombre").val("");
-      $("#ingredientes").val("");
-      $("#preparacion").val("");
-      $("#tiempo").val("");
-      $("#dificultad").val("");
+      // Limpiar los campos después de una operación exitosa
+      $("#nombre, #ingredientes, #preparacion, #tiempo, #dificultad").val("");
     },
-    error: function (xhr, status) {
-      alert("Error al crear la receta");
+    
+    error: function (xhr, status, error) {
+      console.error(xhr, status, error); // Mostrar información detallada del error en la consola
+      alert("Error al crear la receta. Por favor, inténtelo de nuevo.");
     }
   });
 }
+
 
 //__________________________________________________________Funcion para eliminar__________________________________________
 
@@ -69,40 +82,48 @@ function eliminarReceta(nombre) {
 
 //__________________________________________________________Funcion para Actualizar__________________________________________
 
+function editarReceta(nombre, ingredientes, preparacion, tiempo, dificultad) {
+  // Ocultar la tabla y el título
+  $("#tabla, #titulo").hide();
 
-function editarReceta(nombre, ingredientes, preparacion, tiempo) {
-  // Ocultar la tabla
-  $("#tabla").hide();
-  $("#titulo").hide();
   // Crear el formulario para editar la receta
-  let htmlFormulario = "<form id='formulario-editar'><h2>Editar Receta</h2><label for='nombre'>Nombre:</label><input type='text' id='nombre' name='nombre' value='" + nombre + "'><br>";
-  htmlFormulario += "<label for='preparacion'>Preparación:</label><textarea id='preparacion' name='preparacion'>" + preparacion + "</textarea><br>";
-  htmlFormulario += "<label for='ingredientes'>Ingredientes:</label><textarea id='ingredientes' name='ingredientes'>" + ingredientes + "</textarea><br>";
-  htmlFormulario += "<label for='tiempo'>Tiempo:</label><input type='number' id='tiempo' name='tiempo' value='" + tiempo + "' min='0' max='5000' step='5' onchange='updateTime(this.value)'><br>";
-  htmlFormulario += "<label for='dificultad'>Dificultad:</label>";
-  htmlFormulario += "<select id='dificultad' name='dificultad' required>";
-  htmlFormulario += "<option value=''>Seleccione la dificultad</option>";
-  htmlFormulario += "<option value='Fácil' id='dificultad-facil'>Fácil</option>";
-  htmlFormulario += "<option value='Intermedia' id='dificultad-intermedia'>Intermedia</option>";
-  htmlFormulario += "<option value='Difícil' id='dificultad-dificil'>Difícil</option>";
-  htmlFormulario += "</select><br>";
-
-  htmlFormulario += "<input type='submit' value='Guardar cambios'><button type='button' onclick='cancelarEdicion()'>Cancelar</button></form>";
+  let htmlFormulario = `<form id='formulario-editar'>
+    <h2>Editar Receta</h2>
+    <label for='nombre'>Nombre:</label>
+    <input type='text' id='nombre' name='nombre' value='${nombre}'><br>
+    <label for='preparacion'>Preparación:</label>
+    <textarea id='preparacion' name='preparacion'>${preparacion}</textarea><br>
+    <label for='ingredientes'>Ingredientes:</label>
+    <textarea id='ingredientes' name='ingredientes'>${ingredientes}</textarea><br>
+    <label for='tiempo'>Tiempo:</label>
+    <input type='number' id='tiempo' name='tiempo' value='${tiempo}' min='0' max='5000' step='5'><br>
+    <label for='dificultad'>Dificultad:</label>
+    <select id='dificultad' name='dificultad' required>
+      <option value=''>Seleccione la dificultad</option>
+      <option value='Fácil'>Fácil</option>
+      <option value='Intermedia'>Intermedia</option>
+      <option value='Difícil'>Difícil</option>
+    </select><br>
+    <input type='submit' value='Guardar cambios'>
+    <button type='button' onclick='cancelarEdicion()'>Cancelar</button>
+  </form>`;
 
   // Agregar el formulario al contenedor de la tabla
   $("#tabla").after(htmlFormulario);
 
   // Establecer el valor de la dificultad
-  $("#dificultad").val($("#dificultad-" + $("#dificultad").attr("data-value")).val());
+  $("#dificultad").val(dificultad);
 
-  // Escuchar el evento submit del formulario
-  $(document).on("submit", "#formulario-editar", function (event) {
-    event.preventDefault();
-    guardarCambios();
-  });
+ // Escuchar el evento submit del formulario
+ $("#formulario-editar").submit(function (event) {
+  event.preventDefault();
+  guardarCambios();
+});
 }
 
 function guardarCambios() {
+  console.log("Entrando en guardarCambios");
+
   let datosEditarReceta = {
     'nombre': $("#nombre").val(),
     'ingredientes': $("#ingredientes").val(),
@@ -111,30 +132,34 @@ function guardarCambios() {
     'dificultad': $("#dificultad").val()
   };
 
+  console.log("Datos a enviar:", datosEditarReceta);
+
   let nombre = $("#nombre").val();
 
+  console.log("Nombre de la receta:", nombre);
+
   $.ajax({
-    url: "https://gb2ca086f6748de-s27aub565ndywxqi.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/recetas/recetas" + nombre,
+    url: `https://gb2ca086f6748de-s27aub565ndywxqi.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/recetas/recetas/${nombre}`,
     type: "PUT",
     data: datosEditarReceta,
     dataType: "json",
 
     success: function (respuesta) {
+      console.log("Respuesta exitosa:", respuesta);
       alert("Receta actualizada correctamente");
-      // Mostrar la tabla de recetas
-      $("#tabla").show();
-      $("#titulo").show();
+      // Mostrar la tabla y el título
+      $("#tabla, #titulo").show();
       // Eliminar el formulario de edición
       $("#formulario-editar").remove();
       // Recargar la lista de recetas
       traerDatosRecetas();
     },
-    error: function (xhr, status) {
+    error: function (xhr, status, error) {
+      console.error("Error al actualizar la receta:", xhr, status, error);
       alert("Error al actualizar la receta");
     }
   });
 }
-
 
 
 function cancelarEdicion() {
