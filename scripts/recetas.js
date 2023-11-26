@@ -51,7 +51,7 @@ function eliminarReceta(nombre) {
   if (confirm("¿Está seguro que desea eliminar la receta " + nombre + "?")) {
     // Enviar una petición DELETE a la API para eliminar la receta
     $.ajax({
-      url: "https://gb2ca086f6748de-s27aub565ndywxqi.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/recetas/recetas" + nombre,
+      url: "https://gb2ca086f6748de-s27aub565ndywxqi.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/recetas/recetas?nombre=" + nombre,
       type: "DELETE",
       dataType: "json",
       success: function (respuesta) {
