@@ -143,7 +143,7 @@ footer {
   height: 50px;
   margin-right: 10px;
   background-color: transparent; /* Aplicar fondo transparente a las imágenes */
-  border-radius: 50%; /* Opcional: agregar borde circular a las imágenes */
+  border-radius: 50%; /* Opcional: agregar borde circular a las igenes */
 }
 
 .social-media img:last-child {
